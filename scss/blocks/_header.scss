@@ -1,0 +1,113 @@
+.nav {
+  display: flex;
+  padding: 40px 0;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include mobile() {
+    // position: absolute;
+    background-color: #fff;
+    padding: 40px 100px;
+  }
+}
+
+.logo {
+  @include mobile() {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    padding-left: 50px;
+  }
+}
+
+.nav__wrapper {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  a {
+    z-index: 99999;
+  }
+}
+
+.nav__list {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  text-align: center;
+  transition: all 0.9s ease;
+  // position: absolute;
+
+  @include mobile() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-100%);
+    gap: 30px;
+  }
+}
+
+#menu:checked + .nav__list {
+  transform: translateY(0);
+}
+
+#menu {
+  visibility: hidden;
+}
+
+.menuBtn {
+  display: none;
+  background-image: url(../../images/menu\ \(2\).svg);
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  // position: relative;
+  @include mobile() {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}
+
+.nav__list__item a {
+  color: rgb(147, 156, 170);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.nav__list__item a :hover {
+  color: black;
+}
+
+.nav__btn {
+  background: rgb(252, 183, 43);
+  padding: 13px 40px;
+  border: 1px solid rgb(252, 183, 43);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  @include mobile() {
+    display: none;
+  }
+}
+
+.nav__btn:hover {
+  color: rgb(252, 183, 43);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
